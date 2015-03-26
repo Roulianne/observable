@@ -9,17 +9,16 @@ var Model = function( name){
 
 Model.prototype.init = function(){
 	Observable.init( this);// add Observable action
-	this.trigger('jour');
 }
 
 
 Model.prototype.move = function(){
-	this.trigger('moveEvent');
+	this.trigger( 'moveEvent');
 }
 
 Model.prototype.read = function( string){
 	if( string.length > 3){
-		this.trigger('tooBigEvent', [ string.length, string]);
+		this.trigger( 'tooBigEvent', [ string.length, string]);
 	}
 }
 
@@ -33,8 +32,8 @@ Model.prototype.on = function( string){
 var oModelDupond = new Model( 'dupond');
 var oModelMarcel = new Model( 'marcel');
 
-oModelMarcel.on( 'moveEvent read', function(){
-	console.log( this.name+' ( move or read)');
+oModelMarcel.on( 'moveEvent', function(){
+	console.log( this.name+' ( move )');
 });
 
 oModelDupond.on( 'moveEvent', function(){
