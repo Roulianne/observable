@@ -8,7 +8,7 @@ var Model = function( name){
 }
 
 Model.prototype.init = function(){
-	Observable.init( this);// add obervable action
+	Observable.init( this);// add Observable action
 	this.trigger('jour');
 }
 
@@ -19,7 +19,7 @@ Model.prototype.move = function(){
 
 Model.prototype.read = function( string){
 	if( string.length > 3){
-		this.trigger('toBig', [18, 'test']);
+		this.trigger('toBig', [ string.length, 'test']);
 	}
 }
 
