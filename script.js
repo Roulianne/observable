@@ -19,7 +19,7 @@ Model.prototype.move = function(){
 
 Model.prototype.read = function( string){
 	if( string.length > 3){
-		this.trigger('toBig', [ string.length, 'test']);
+		this.trigger('tooBigEvent', [ string.length, string]);
 	}
 }
 
@@ -30,26 +30,25 @@ Model.prototype.on = function( string){
 
 /*****************************************
 ******************************************/
-var oModel1 = new Model( 'hello');
-var oModel2 = new Model( 'word');
+var oModelDupond = new Model( 'dupond');
+var oModelMarcel = new Model( 'marcel');
 
-oModel2.on( 'moveEvent read', function(){
+oModelMarcel.on( 'moveEvent read', function(){
 	console.log( this.name+' ( move or read)');
 });
 
-oModel1.on( 'moveEvent', function(){
+oModelDupond.on( 'moveEvent', function(){
 	console.log( this.name + ' (move)');
 });
 
-oModel2.on( 'toBig', function( num, string){
+oModelMarcel.on( 'tooBigEvent', function( num, string){
 	this.move();
-	console.log( num);
-	console.log( string);
+	console.log( string, num);
 });
 
-oModel1.on( 'toBig', function(){
+oModelDupond.on( 'tooBigEvent', function(){
 	console.log( 'it\'s too big');
 });
 
 
-oModel2.read('string');
+oModelMarcel.read('string');
