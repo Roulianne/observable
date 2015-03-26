@@ -10,14 +10,13 @@
     // VERSION 0.1
     var Observable = ( function construct(){
 
-          // ajout des nouvelle fonctionnalite a l'object
          function init( obj){
 
             var _oEvent    = {};
             var _aLibEvent = [];
 
             /**
-             * [onEvent description]
+             * [onEvent link function to event(s)]
              * @param  {[string]} sEvent      [name's event]
              * @param  {[function]} fCallBack [function call back]
              * @return {[boolean]}
@@ -51,7 +50,7 @@
             }
 
             /**
-             * [triggerEvent description]
+             * [triggerEvent launch event with params]
              * @param  {[string]} sEvent [name's event]
              * @param  {[mix]} mArgs  [argument]
              * @return {[boolean]}        []
