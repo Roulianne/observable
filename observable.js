@@ -2,8 +2,8 @@
  * This script is developed by JAMET julien, http://www.bac-a-sable.com
  * Feel free to distribute and modify code, but keep reference to its creator
  *
- * Observale class provides a way to define and detect event.
- * You can define your own trigger, by function and evnet name.
+ * Observable class provides a way to define and detect event.
+ * You can define your own trigger, by function and event name.
 **************************************************************/
 (function( _global){
 
